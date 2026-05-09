@@ -48,11 +48,11 @@ A secure banking backend with JWT authentication, account management, and transa
 ```bash
 POST /api/auth/register
 {
-  "username": "john_doe",
-  "email": "john@example.com",
-  "password": "password123",
-  "firstName": "John",
-  "lastName": "Doe"
+  "username": "prathamesh",
+  "email": "prathaam19@gmail.com",
+  "password": "user123",
+  "firstName": "Prathamesh",
+  "lastName": "P"
 }
 ```
 
@@ -60,8 +60,8 @@ POST /api/auth/register
 ```bash
 POST /api/auth/login
 {
-  "username": "john_doe",
-  "password": "password123"
+  "username": "prathamesh",
+  "password": "user123"
 }
 ```
 
@@ -70,7 +70,7 @@ POST /api/auth/login
 POST /api/accounts
 Authorization: Bearer <jwt-token>
 {
-  "accountHolderName": "John Doe",
+  "accountHolderName": "Prathamesh",
   "accountType": "SAVINGS",
   "userId": 1,
   "branchId": 1
@@ -84,7 +84,7 @@ Authorization: Bearer <jwt-token>
 {
   "fromAccountId": 1,
   "toAccountId": 2,
-  "amount": 500.00,
+  "amount": 5000.0,
   "description": "Transfer"
 }
 ```
@@ -142,7 +142,7 @@ Authorization: Bearer <jwt-token>
 - `GET /api/transactions/user/{userId}` - Get transactions by user
 - `GET /api/transactions/history/{accountId}` - Get transaction history
 
-## Sample API Usage
+##  API Usage
 
 ### 1. User Registration
 ```bash
@@ -150,11 +150,11 @@ POST /api/auth/register
 Content-Type: application/json
 
 {
-  "username": "john_doe",
-  "email": "john.doe@example.com",
-  "password": "password123",
-  "firstName": "John",
-  "lastName": "Doe"
+  "username": "prathamesh",
+  "email": "prathamesh.p@yahoo.com",
+  "password": "admin123",
+  "firstName": "Prathamesh",
+  "lastName": "P"
 }
 ```
 
@@ -164,8 +164,8 @@ POST /api/auth/login
 Content-Type: application/json
 
 {
-  "username": "john_doe",
-  "password": "password123"
+  "username": "prathamesh",
+  "password": "admin123"
 }
 ```
 
@@ -177,10 +177,10 @@ Response:
   "data": {
     "token": "eyJhbGciOiJIUzI1NiJ9...",
     "tokenType": "Bearer",
-    "username": "john_doe",
-    "email": "john.doe@example.com",
-    "firstName": "John",
-    "lastName": "Doe",
+    "username": "prathamesh",
+    "email": "prathamesh.p@yahoo.com",
+    "firstName": "Prathamesh",
+    "lastName": "P",
     "role": "ROLE_USER",
     "expiresAt": "2026-05-10T12:05:32"
   }
@@ -194,7 +194,7 @@ Authorization: Bearer <your-jwt-token>
 Content-Type: application/json
 
 {
-  "accountHolderName": "John Doe",
+  "accountHolderName": "Prathamesh_P",
   "accountType": "SAVINGS",
   "userId": 1,
   "branchId": 1
