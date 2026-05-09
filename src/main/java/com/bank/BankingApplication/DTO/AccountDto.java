@@ -1,33 +1,47 @@
 package com.bank.BankingApplication.DTO;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.PositiveOrZero;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class AccountDto {
-        private Long id;
-        private String accountHolderName;
-        private double balance;
 
-        // Standard getters and setters
+    private Long id;
 
-    public Long getId() {
-        return id;
-    }
+    @NotBlank(message = "Account holder name is required")
+    private String accountHolderName;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private String accountNumber;
 
-    public String getAccountHolderName() {
-        return accountHolderName;
-    }
+    private String accountType;
 
-    public void setAccountHolderName(String accountHolderName) {
-        this.accountHolderName = accountHolderName;
-    }
+    @PositiveOrZero(message = "Balance cannot be negative")
+    private double balance;
 
-    public double getBalance() {
-        return balance;
-    }
+    private String accountStatus;
 
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
+
+    // User information
+    @NotNull(message = "User ID is required")
+    private Long userId;
+
+    private String username;
+
+    // Branch information
+    private Long branchId;
+
+    private String branchName;
+
+    private String branchCode;
 }
